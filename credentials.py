@@ -6,12 +6,12 @@ credentials = {
         "metadata":"https://sandiego.cityiq.io/api/v2/metadata/",
         "event":"https://sandiego.cityiq.io/api/v2/event/",
         "websocket": "wss://https://sandiego.cityiq.io/api/v2/websocket", 
-        "developer": "PublicAccess:uVeeMuiue4k=",
+        "developer": "PublicAccess:qPKIadEsoHjyh226Snz7",
         "parking": "SD-IE-PARKING",
         "environment": "SD-IE-ENVIRONMENTAL",
         "pedestrian": "SD-IE-PEDESTRIAN",
         "traffic": "SD-IE-TRAFFIC",
         "bicycle": "SD-IE-BIKE", 
-        "bbox": "32.715675:-117.161230,32.708498:-117.151681"
+        "bbox": "33.396515:-117.778637,32.467246:-115.638979"
     }
 }
