@@ -1,8 +1,19 @@
-<<<<<<< HEAD
-# Portland_CARTO_notebook_Datasets_Creds
-=======
+# CityIQ Data
 
-# US Ignite Spatial Data Science Notebooks for Portland, OR
+To use CityIQ data, make sure `credential.py`, `creds_usignite.json` and `cityiq.py` are under the same directory of the notebook you are running. You can learn how to use CityIQ API in `US_Ignite_Using_CityIQ_Notebook.ipynb` and spacial aggregation in `CityIQ_Data_Pipeline_Spatial_Aggregation.ipynb`.
+
+To acquire pedestrian and vehicle counts in a specific time in Portland. Run `CityIQ_PedCount_Hourly_Agg.ipynb` and `CityIQ_VehCount_Hourly_Agg.ipynb`.
+ - Make sure the city name in the credential is right.
+ - Set hours and end time.
+ - Run the notebook to get the data in a csv file. 
+
+
+To fetch other types of events using CityIQ, learn more at https://github.com/CityIQ/CityIQ-Starter-Code-Python/blob/master/demo.py 
+
+To learn more about CityIQ, visit their GitHub at https://github.com/CityIQ
+ 
+
+# US Ignite Spatial Data Science Notebooks for Portland
 
 ## Git workflow
 Below is an brief outline of the git workflow for joint development between CARTO and US Ignite:
