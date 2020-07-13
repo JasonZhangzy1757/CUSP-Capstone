@@ -1,7 +1,5 @@
 # US Ignite Data Notebooks for Portland
 
-
-
 ## Git workflow
 Below is an brief outline of the git workflow for joint development between CARTO and US Ignite:
 
@@ -75,6 +73,8 @@ With seemingly ideal cluster values, tehy are visualized via cartoframes to see 
 
 In `DETAILED CLUSTERING.ipynb` notebook, building upon the previously identified techniques by trying out extensive cluster numbers and settings, Tthe same data and preprocessing have been used. Finally, **gaussian mixture** has been identified as a suitable clustering technique for our final product. This technique is used to highlight under which cluster the users’ NAICS fall (meaning in terms on similarity in properties).
 
+
+
 # User Review Part (NLP)
 
 To use the review datasets of different types of small business from YELP and Google Places in Portland, one can learn how to do spatial analysis on the review distribution, ratings and review count from `Spatial_analysis_of_user_reviews_final.ipynb`.
@@ -83,6 +83,39 @@ Using `Sentiment_Analysis_final.ipynb` that based on the review texts datasets t
 
 To get insight of the review text datasets, you can get review aspect analyzing, sentiment scores and ratings in each GeoID by using natural language processing tools in `Sentiment_Analysis_final.ipynb`.
 
+
+
+# Modelling 
+This is the model part for the project, with many files involved. Below is a list of what each file does:
+
+**ML - NAICS code.ipynb**
+Used file Final_merged_city_portland_with_NAICS.csv, CityIQ_pedveh_Count.csv, total_score1_csv, Final_merged_city_portland.csv. Use this notebook to compute score of each geo_id associated with each NAICS code. The output is 6 csv files: Score_naics_23.csv, Score_naics_42.csv, Score_naics_54.csv, Score_naics_62.csv, Score_naics_72.csv, Score_naics_81.csv.
+
+
+**Score_naics_X.csv (X in (23, 42, 54, 62, 72,81))**
+For each Score_naics_X.csv, it has final score of each geo_id in descending order associated with NAICS code X.
+
+
+**SPATIAL_JOIN.ipynb**
+Used file pedestrian_count_sample.csv, pedestrian_count_sample_515.csv, pedestrian_count_sample_522.csv, pedestrian_count_sample_529.csv, pedestrian_count_sample_530.csv, pedestrian_count_sample_531.csv, Final_merged_city_portland.csv. Use this notebook to aggregate pedestrian count and merge this to Final_merged_city_portland dataframe. The output is portland_final.csv.
+
+
+**ML Model - Portland + PedestrianCount.ipynb**
+Used file portland_final.csv. This notebook trained decision tree and random forest models to predict employment size and establishment size of each records and check the feature importances.
+
+
+**ML - Master Card.ipynb**
+Used file mastercardwithnaics.csv. This notebook trained decision tree and random forest models to predict employment size, establishment size, and industry type of each records and check the feature importances.
+
+
+**ML - Portland with NAICS code.ipynb**
+Used file Final_merged_city_portland_with_NAICS.csv. This notebook trained decision tree, random forest, and SVM models to predict employment size and establishment size of each records and check the feature importances.
+
+
+**GWR - Fed Portland.ipynb**
+Used file Final_merged_city_portland.csv. This notebook trained a geographically weighted regression model to predict employment size and establishment size of each records and check the local R squared.
+
+***
 ### Following are introductions of other files used for th project.
 - NAICS CODE PORTLAND.ipynb:
 This is a reused code from the notebook that was used to generate the data for San Diego. The changes were made to the state, county and certain small aspects of the data aggregation. The output of this code is the primary dataset for all other aspects of the project
@@ -95,8 +128,6 @@ This notebook is used to test if all the necessary features have been properly g
 
 - RECOMMENDATION – PROTOTYPE.ipynb:
 This notebook is a throwaway notebook used to see how querying the dataframe would look in realtime
-
-
 
 
 
