@@ -1,40 +1,23 @@
-# US Ignite Data Notebooks for Portland
+# Smart Monitor for Accelerating Regional Transformation (SMART)
 
-## Git workflow
-Below is an brief outline of the git workflow for joint development between CARTO and US Ignite:
+This is the repository for CUSP Capstone Project. 
 
-###Pull from `master` and check out a new working branch
-The `master` branch will be the main branch which we merge our changes and share notebooks. When beginning to work on any notebook, please pull from `master` first:
+The majority of cities have identified gaps between big data and the potential of using it for economic development decisions. Unlike multinational corporations, small businesses lack the capacity, resources and budget to conduct research and compare the pros and cons of locations. The purpose of this capstone is to develop a **Decision Support System**, including a smart framework and an online interactive tool, for small businesses. The system will provide economic and demographic information to help small business owners make better decisions on choosing locations for their businesses.
 
-```
-git pull origin master
-```
+The repository is forked from "us-ignite/Portland_CARTO_notebook", the repo we worked on during the project. Forking is merely for adding more capstone-related descriptions and report. All codes mentioned below are created entirely by group members.
 
-Then checkout(create) a new branch to work on during your work session:
+**Group member:**
+- Jianqi Tang (jt2900)
+- Ram Sowmya Narayanan (rsn293)
+- Yanyan Xu (yx2193)
+- Zehui Xiang (zx742)
+- Zheyuan Zhang (zz2498)
 
-```
-git checkout -b dev-yourBranchName
-```
+**Sponsor:**
+US Ignite
 
-You may call this branch anything you like, but using some combination of "develop" and your name will clearly indicate the user and state of the branch. After you create the branch, to switch between branches, use `git checkout branchName` with no `-b` in between.
-
-### Merge changes
-When your work is complete on your personal development branch (i.e. `dev-jd`) you can merge changes back to `master` by changing branches back to `master` then merging like this:
-
-```
-git checkout master
-git pull origin master
-git merge dev-jd
-```
-But a better way to do this is to create a [pull-request](https://help.github.com/en/articles/about-pull-requests) on your branch in GitHub.
-
-After your branch is reviewed and merged, you may remove it if you like with:
-
-```
-git branch -d dev-jd
-```
-
-To use a local git, [here](https://github.com/us-ignite/Portland_CARTO_notebook/blob/master/Github%20Tutorial.docx) is a brief tutorial. 
+**Mentor:**
+Dr. Martina Balestra
 
 
 
@@ -115,8 +98,10 @@ Used file Final_merged_city_portland_with_NAICS.csv. This notebook trained decis
 **GWR - Fed Portland.ipynb**
 Used file Final_merged_city_portland.csv. This notebook trained a geographically weighted regression model to predict employment size and establishment size of each records and check the local R squared.
 
+
 ***
-### Following are introductions of other files used for th project.
+
+## Following are introductions of other files used for the project.
 - NAICS CODE PORTLAND.ipynb:
 This is a reused code from the notebook that was used to generate the data for San Diego. The changes were made to the state, county and certain small aspects of the data aggregation. The output of this code is the primary dataset for all other aspects of the project
 
@@ -131,30 +116,38 @@ This notebook is a throwaway notebook used to see how querying the dataframe wou
 
 
 
-### Hide your crendentials
-We'd like not to expose API keys in our notebooks, and one method of doing so is to use environemtal variables and the python library [python-dotenv](https://github.com/theskumar/python-dotenv). Install python-dotenv in your local virtual environment:
+## Git workflow
+Below is an brief outline of the git workflow for joint development between CARTO and US Ignite:
+
+###Pull from `master` and check out a new working branch
+The `master` branch will be the main branch which we merge our changes and share notebooks. When beginning to work on any notebook, please pull from `master` first:
 
 ```
-pip install -U python-dotenv
+git pull origin master
 ```
 
-Then create an `.env` file in the directory where your notebooks reside (`touch .env`). Next drop the following into that file, adding in your base url and api key: 
+Then checkout(create) a new branch to work on during your work session:
 
 ```
-export BASE_URL=*******
-export API_KEY=*******
+git checkout -b dev-yourBranchName
 ```
 
-In your notebook, you can call those credentials with the following code:
+You may call this branch anything you like, but using some combination of "develop" and your name will clearly indicate the user and state of the branch. After you create the branch, to switch between branches, use `git checkout branchName` with no `-b` in between.
+
+### Merge changes
+When your work is complete on your personal development branch (i.e. `dev-jd`) you can merge changes back to `master` by changing branches back to `master` then merging like this:
 
 ```
-#load .env with credentials
-from dotenv import load_dotenv
-load_dotenv()
+git checkout master
+git pull origin master
+git merge dev-jd
+```
+But a better way to do this is to create a [pull-request](https://help.github.com/en/articles/about-pull-requests) on your branch in GitHub.
 
-import os
-BASE_URL = os.getenv("BASE_URL")
-API_KEY = os.getenv("API_KEY")
+After your branch is reviewed and merged, you may remove it if you like with:
+
+```
+git branch -d dev-jd
 ```
 
-From there, you can use the variables `BASE_URL` and `API_KEY` whereever neccesary. 
+To use a local git, [here](https://github.com/us-ignite/Portland_CARTO_notebook/blob/master/Github%20Tutorial.docx) is a brief tutorial. 
