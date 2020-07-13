@@ -4,6 +4,9 @@ This is the repository for CUSP Capstone Project.
 
 The majority of cities have identified gaps between big data and the potential of using it for economic development decisions. Unlike multinational corporations, small businesses lack the capacity, resources and budget to conduct research and compare the pros and cons of locations. The purpose of this capstone is to develop a **Decision Support System**, including a smart framework and an online interactive tool, for small businesses. The system will provide economic and demographic information to help small business owners make better decisions on choosing locations for their businesses.
 
+To have a better understanding of the project, please read our **final report** at [here](https://github.com/JasonZhangzy1757/CUSP-Capstone/edit/master/README.md). To have a try on our **interactive tool**, please visit our website [here](https://github.com/JasonZhangzy1757/CUSP-Capstone/edit/master/README.md).
+**(the link is not yet ready)**
+
 The repository is forked from "us-ignite/Portland_CARTO_notebook", the repo we worked on during the project. Forking is merely for adding more capstone-related descriptions and report. All codes mentioned below are created entirely by group members.
 
 **Group member:**
