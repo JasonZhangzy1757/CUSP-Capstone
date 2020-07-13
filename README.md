@@ -106,7 +106,7 @@ Used file Final_merged_city_portland.csv. This notebook trained a geographically
 
 ***
 
-## Following are introductions of other files used for the project.
+## Following are introductions of other important files used for the project.
 - NAICS CODE PORTLAND.ipynb:
 This is a reused code from the notebook that was used to generate the data for San Diego. The changes were made to the state, county and certain small aspects of the data aggregation. The output of this code is the primary dataset for all other aspects of the project
 
