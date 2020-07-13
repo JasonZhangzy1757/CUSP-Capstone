@@ -48,6 +48,8 @@ To acquire pedestrian and vehicle counts in a specific time in Portland. Run `Ci
  - Make sure the city name in the credential is right.
  - Set hours and end time.
  - Run the notebook to get the data in a csv file. 
+ 
+Through `SPATIAL JOIN.ipynb`, CityIQ data is joined with the dataset to see where each sensor lies in Portland. and also it maps sensors into geoid, so pdestrian and vehicle counts are aggregated to geoid level of granularity. Areas without sensors covered are filled with average values to make sure the model in later steps works.
 
 To fetch other types of events using CityIQ, learn more at https://github.com/CityIQ/CityIQ-Starter-Code-Python/blob/master/demo.py 
 
@@ -55,8 +57,46 @@ To learn more about CityIQ, visit their GitHub at https://github.com/CityIQ
  
 
 
-# ...
-...
+# Spatial Data Aggregation
+The main idea of this step is to include latent spatial information when evaluating establishment ratio. To use `EDA_spatial_portland.ipynb` and `spatial_temporal_Portland.ipynb`, please ensure `Final_merged_city_portland.csv` are under the same directory of the notebook you are running. 
+
+`EDA_spatial_portland.ipynb` includes information of federal dataset, with more than twenty features of each geoid. 
+
+In `spatial_temporal_Portland.ipynb`, pysal package is used to make analysis.
+
+For more reference about pysal you can check https://pysal.org/pysal/api.html.
+
+
+
+# Clustering Part
+The goal of `INITIAL CLUSTERING.ipynb` notebook is to identify which techniques can be used and the how the data looks under each clustering format. The primary input for this notebook is the Portland with NAICS data. By dropping the additional index column and dropping the duplicates, a new column that has the names for all the NAICS codes has been created as a categorical column. Then several clustering techiques have been implemented such as KMeans, Gaussian Mixture, DBSCAN, Birch and Mean Shift Clustering.
+
+With seemingly ideal cluster values, tehy are visualized via cartoframes to see which techniques identify convincing clusters.
+
+In `DETAILED CLUSTERING.ipynb` notebook, building upon the previously identified techniques by trying out extensive cluster numbers and settings, Tthe same data and preprocessing have been used. Finally, **gaussian mixture** has been identified as a suitable clustering technique for our final product. This technique is used to highlight under which cluster the users’ NAICS fall (meaning in terms on similarity in properties).
+
+# User Review Part (NLP)
+
+To use the review datasets of different types of small business from YELP and Google Places in Portland, one can learn how to do spatial analysis on the review distribution, ratings and review count from `Spatial_analysis_of_user_reviews_final.ipynb`.
+
+Using `Sentiment_Analysis_final.ipynb` that based on the review texts datasets to get the Top 5 frequently used word in each types of small business in different GeoID in Portland.
+
+To get insight of the review text datasets, you can get review aspect analyzing, sentiment scores and ratings in each GeoID by using natural language processing tools in `Sentiment_Analysis_final.ipynb`.
+
+### Following are introductions of other files used for th project.
+- NAICS CODE PORTLAND.ipynb:
+This is a reused code from the notebook that was used to generate the data for San Diego. The changes were made to the state, county and certain small aspects of the data aggregation. The output of this code is the primary dataset for all other aspects of the project
+
+- PORTLAND RAM TESTING.ipynb:
+This is a notebook to test out the features and behaviour of the codes, a sandbox of sorts for the previous notebook
+
+- RAM PORTLAND VIZ.ipynb:
+This notebook is used to test if all the necessary features have been properly given in the dataframe. This is done visualizing it via cartoframes against sample columns.
+
+- RECOMMENDATION – PROTOTYPE.ipynb:
+This notebook is a throwaway notebook used to see how querying the dataframe would look in realtime
+
+
 
 
 
