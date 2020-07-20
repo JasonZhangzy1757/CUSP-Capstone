@@ -6,7 +6,7 @@ The majority of cities have identified gaps between big data and the potential o
 
 Files mentioned below are all closely related to the output of the project, yet there are files used for the middle processing part that exist in the repo but without a detailed description. For example, generating boundary box for cityIQ sensors in Portland to get a feature used in cityIQ ccredential is also an important task, but for concise reason, we only added descriptions for those notebooks that matter.
 
-To have a better understanding of the project, please read our **final report** at [here](https://github.com/JasonZhangzy1757/CUSP-Capstone/edit/master/README.md).**(the link is not yet ready)** To have a try on our **interactive tool** on our website, please visit our website [here](https://smartcapstone.wixsite.com/nyucusp).
+To have a better understanding of the project, please read our **final report** at [here](https://github.com/JasonZhangzy1757/CUSP-Capstone/blob/master/SMART%20-%20Final%20Report.pdf). To have a try on our **interactive tool** on our website, please visit our website [here](https://smartcapstone.wixsite.com/nyucusp).
 
 
 **p.s.** The repository is forked from "us-ignite/Portland_CARTO_notebook", the repo we worked on during the project. Forking is merely for adding more capstone-related descriptions and report. Most of the codes, including all codes mentioned below are created entirely by our group members.
